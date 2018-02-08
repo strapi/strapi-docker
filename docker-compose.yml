@@ -1,15 +1,11 @@
-version: '2'
+version: '3'
 
 services:
   api:
-    container_name: strapi
-    build:
-      context: .
+    image: strapi/strapi
     environment:
-      - HOST=localhost
-      - PORT=1337
       - DATABASE_CLIENT=mongo
-      - DATABASE_HOST=mongo
+      - DATABASE_HOST=db
       - DATABASE_PORT=27017
       - DATABASE_NAME=strapi
       - DATABASE_USERNAME=
@@ -17,11 +13,10 @@ services:
     ports:
       - 1337:1337
     depends_on:
-      - mongo
+      - db
     restart: always
 
-  mongo:
-    container_name: mongo
+  db:
     image: mongo
     environment:
       - MONGO_INITDB_DATABASE=strapi
