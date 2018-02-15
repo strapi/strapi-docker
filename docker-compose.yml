@@ -12,6 +12,9 @@ services:
       - DATABASE_PASSWORD=
     ports:
       - 1337:1337
+    volumes:
+      - ./strapi-api:/usr/src/api/strapi-api
+      - /usr/src/api/strapi-api/node_modules
     depends_on:
       - db
     restart: always
