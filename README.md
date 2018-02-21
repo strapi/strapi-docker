@@ -1,6 +1,10 @@
-# [Strapi](https://github.com/strapi/strapi) containerized
+<p align="center"><img src="https://cldup.com/7umchwdUBh.png" /></p>
+<h3 align="center">API creation made simple, secure and fast.</h3>
+<p align="center">The most advanced open-source Content Management Framework to build powerful API with no effort.</p>
 
-> Strapi is an Node.js Content Management Framework (headless-CMS) to build powerful API with no effort.
+***
+
+<br />
 
 [![Travis](https://img.shields.io/travis/strapi/strapi-docker.svg?style=for-the-badge)](https://github.com/strapi/strapi-docker)
 [![GitHub release](https://img.shields.io/github/release/strapi/strapi-docker.svg?style=for-the-badge)](https://github.com/strapi/strapi-docker)
@@ -16,7 +20,7 @@
 ## Pull from Docker Hub
 
 ```bash
-docker pull strapi/strapi:latest
+docker pull strapi/strapi
 ```
 
 ### Then run image
@@ -51,7 +55,7 @@ You should the be able to access your Strapi installation at [localhost](http://
 ## Use as base image
 
 ```Dockerfile
-FROM strapi/strapi:latest
+FROM strapi/strapi
 ```
 
 ## Environment variables
