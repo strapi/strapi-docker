@@ -15,4 +15,4 @@ then
 fi
 
 cd $APP_NAME
-npm start
+strapi start
