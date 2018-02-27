@@ -7,5 +7,5 @@ script:
   - docker build -t strapi .
   - docker-compose up -d
   - sleep 42
-  - docker exec strapidocker_strapi_1 /bin/sh -c "curl -f localhost:1337"
-  - docker logs strapidocker_strapi_1
+  - curl -f localhost:1337
+  - docker logs strapidocker_api_1
