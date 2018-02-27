@@ -4,13 +4,13 @@
 
 ***
 
-<br />
+# [Strapi](https://github.com/strapi/strapi) containerized
 
-[![Travis](https://img.shields.io/travis/strapi/strapi-docker.svg?style=for-the-badge)](https://github.com/strapi/strapi-docker)
-[![GitHub release](https://img.shields.io/github/release/strapi/strapi-docker.svg?style=for-the-badge)](https://github.com/strapi/strapi-docker)
+> [Read the Medium post to have full explaination](https://medium.com/@lucaperret/strapi-quickstart-with-docker-d77ca7c86c1f)
+
+[![Travis](https://img.shields.io/travis/strapi/strapi-docker.svg?style=for-the-badge)](https://travis-ci.org/strapi/strapi-docker)
+[![GitHub release](https://img.shields.io/github/release/strapi/strapi-docker.svg?style=for-the-badge)](https://github.com/strapi/strapi-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/strapi/strapi.svg?style=for-the-badge)](https://hub.docker.com/r/strapi/strapi)
-
-[Read the Medium post to have full explaination](https://medium.com/@lucaperret/strapi-quickstart-with-docker-65975dfcac09)
 
 ## Quickstart (recommended)
 
