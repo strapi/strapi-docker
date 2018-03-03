@@ -18,4 +18,4 @@ RUN chmod +x ./strapi.sh
 
 EXPOSE 1337
 
-CMD ./strapi.sh
+CMD ["./strapi.sh"]
