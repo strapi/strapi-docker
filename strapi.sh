@@ -1,6 +1,14 @@
 #!/bin/sh
 set -ea
 
+_stopStrapi() {
+  echo "Stopping strapi"
+  kill -SIGINT "$strapiPID"
+  wait "$strapiPID"
+}
+
+trap _stopStrapi SIGTERM SIGINT
+
 cd /usr/src/api
 
 APP_NAME=${APP_NAME:-strapi-app}
@@ -15,4 +23,7 @@ then
 fi
 
 cd $APP_NAME
-strapi start
+strapi start &
+
+strapiPID=$!
+wait "$strapiPID"
