@@ -6,6 +6,6 @@ services:
 script:
   - docker build -t strapi .
   - docker-compose up -d
-  - sleep 42
+  - sleep 60
   - curl -f localhost:1337
   - docker logs strapidocker_api_1
