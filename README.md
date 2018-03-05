@@ -49,7 +49,7 @@ docker run -e APP_NAME=strapi-app \
            --name strapi -d strapi/strapi
 ```
 
-You should the be able to access your Strapi installation at [localhost](http://localhost:1337).
+You should the be able to access your Strapi installation at [localhost:1337](http://localhost:1337).
 
 ## Use as base image
 
