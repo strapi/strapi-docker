@@ -1,0 +1,11 @@
+# https://help.github.com/articles/dealing-with-line-endings/
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Dockerfile and YAML files are text files as well
+Dockerfile text
+*.yml text
+
+# Shell scripts should always use LF line endings, otherwise the Docker base image might cause problems
+*.sh text eol=lf
