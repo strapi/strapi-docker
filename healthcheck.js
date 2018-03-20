@@ -12,8 +12,7 @@ const request = http.get(options, (res) => {
     console.log(`STATUS: ${res.statusCode}`);
     if (res.statusCode == 204) {
         process.exit(0);
-    }
-    else {
+    } else {
         process.exit(1);
     }
 });
