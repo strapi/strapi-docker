@@ -10,3 +10,4 @@ Dockerfile text
 
 # Shell scripts should always use LF line endings, otherwise the Docker base image might cause problems
 *.sh text eol=lf
+*.js text eol=lf
