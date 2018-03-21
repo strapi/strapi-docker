@@ -1,18 +1,19 @@
-<p align="center"><img src="https://cldup.com/7umchwdUBh.png" /></p>
-<h3 align="center">API creation made simple, secure and fast.</h3>
-<p align="center">The most advanced open-source Content Management Framework to build powerful API with no effort.</p>
-
-***
-
 # [Strapi](https://github.com/strapi/strapi) containerized
 
-> [Read the Medium post to have full explaination](https://medium.com/@lucaperret/strapi-quickstart-with-docker-d77ca7c86c1f)
+![Strapi](https://cldup.com/7umchwdUBh.png)
+
+API creation made simple, secure and fast.
+The most advanced open-source Content Management Framework to build powerful API with no effort.
+
+***
 
 [![Travis](https://img.shields.io/travis/strapi/strapi-docker.svg?style=for-the-badge)](https://travis-ci.org/strapi/strapi-docker)
 [![GitHub release](https://img.shields.io/github/release/strapi/strapi-docker.svg?style=for-the-badge)](https://github.com/strapi/strapi-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/strapi/strapi.svg?style=for-the-badge)](https://hub.docker.com/r/strapi/strapi)
 
 ## Quickstart (recommended)
+
+> [Read the Medium post to have full explaination](https://medium.com/@lucaperret/strapi-quickstart-with-docker-d77ca7c86c1f)
 
 1. `git clone https://github.com/strapi/strapi-docker && cd strapi-docker`
 2. Run using `docker-compose up`
