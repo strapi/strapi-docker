@@ -11,6 +11,7 @@ services:
       - DATABASE_NAME=strapi
       - DATABASE_USERNAME=
       - DATABASE_PASSWORD=
+      - HOST=localhost
     ports:
       - 1337:1337
     volumes:
