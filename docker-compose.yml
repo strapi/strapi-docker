@@ -16,7 +16,7 @@ services:
       - 1337:1337
     volumes:
       - ./strapi-app:/usr/src/api/strapi-app
-      - /usr/src/api/strapi-app/node_modules
+      #- /usr/src/api/strapi-app/node_modules
     depends_on:
       - db
     restart: always
