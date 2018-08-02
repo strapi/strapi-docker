@@ -44,7 +44,6 @@ docker run -e APP_NAME=strapi-app \
            -e DATABASE_PORT=27017 \
            -e DATABASE_NAME=strapi \
            -v `pwd`/strapi-app:/usr/src/api/strapi-app \
-           -v /usr/src/api/strapi-app/node_modules \
            --link strapi-mongo:mongo \
            -p 1337:1337 \
            --name strapi -d strapi/strapi
