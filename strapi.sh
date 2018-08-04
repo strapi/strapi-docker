@@ -23,7 +23,6 @@ then
 then
     npm install --prefix ./$APP_NAME
 fi
-fi
 
 cd $APP_NAME
 strapi start &
