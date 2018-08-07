@@ -67,4 +67,4 @@ FROM strapi/strapi
 - `DATABASE_USERNAME` set the username of the database connection.
 - `DATABASE_PASSWORD` set the password of the database connection.
 - `DATABASE_SSL` boolean for SSL.
-- `DATABASE_AUTH` set the authentification
+- `DATABASE_AUTHENTICATION_DATABASE` set the authentification.
