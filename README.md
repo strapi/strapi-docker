@@ -66,3 +66,5 @@ FROM strapi/strapi
 - `DATABASE_NAME` initializes a database with specific name (default strapi). When using MongoDB, you should also update the `MONGO_INITDB_DATABASE` environment in the db service.
 - `DATABASE_USERNAME` set the username of the database connection.
 - `DATABASE_PASSWORD` set the password of the database connection.
+- `DATABASE_SSL` boolean for SSL.
+- `DATABASE_AUTH` set the authentification
