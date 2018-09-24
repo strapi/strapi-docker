@@ -11,7 +11,7 @@ LABEL maintainer="Luca Perret <perret.luca@gmail.com>" \
 
 WORKDIR /usr/src/api
 
-RUN npm install -g strapi@3.0.0-alpha.14
+RUN npm install -g strapi@3.0.0-alpha.14.1.1
 
 COPY strapi.sh ./
 RUN chmod +x ./strapi.sh
