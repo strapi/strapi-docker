@@ -8,6 +8,15 @@ LABEL maintainer="Luca Perret <perret.luca@gmail.com>" \
       org.label-schema.vcs-url="https://github.com/strapi/strapi-docker" \
       org.label-schema.version=latest \
       org.label-schema.schema-version="1.0"
+      
+ENV APP_NAME strapi-app
+ENV DATABASE_CLIENT mongo
+ENV DATABASE_HOST db
+ENV DATABASE_PORT 27017
+ENV DATABASE_NAME strapi
+ENV DATABASE_USERNAME 
+ENV DATABASE_PASSWORD 
+ENV HOST localhost
 
 WORKDIR /usr/src/api
 
