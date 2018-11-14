@@ -2,7 +2,8 @@ version: '3'
 
 services:
   api:
-    image: strapi/strapi
+    build: .
+    #image: strapi/strapi
     environment:
       - APP_NAME=strapi-app
       - DATABASE_CLIENT=mongo
