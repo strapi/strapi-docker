@@ -13,7 +13,7 @@ WORKDIR /usr/src/api
 
 RUN echo "unsafe-perm = true" >> ~/.npmrc
 
-RUN npm install -g strapi@3.0.0-alpha.14.4.5
+RUN npm install -g strapi@3.0.0-alpha.14.5
 
 COPY strapi.sh ./
 RUN chmod +x ./strapi.sh
