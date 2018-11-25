@@ -5,21 +5,31 @@ services:
     build: .
     #image: strapi/strapi
     environment:
-      - APP_NAME=strapi-app
+      - APP_NAME=tourserv-app
       - DATABASE_CLIENT=mongo
       - DATABASE_HOST=db
       - DATABASE_PORT=27017
-      - DATABASE_NAME=strapi
+      - DATABASE_NAME=tourserv_db
       - DATABASE_USERNAME=
       - DATABASE_PASSWORD=
       - DATABASE_SSL=false
-      - DATABASE_AUTHENTICATION_DATABASE=strapi
+      - DATABASE_AUTHENTICATION_DATABASE=tourserv_db
       - HOST=localhost
     ports:
       - 1337:1337
     volumes:
-      - ./strapi-app:/usr/src/api/strapi-app
+      - ./tourserv-app:/usr/src/api/tourserv-app
       #- /usr/src/api/strapi-app/node_modules
     depends_on:
       - db
+    restart: always
+
+  db:
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=tourserv_db
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db:/data/db
     restart: always
