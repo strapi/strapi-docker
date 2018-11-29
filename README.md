@@ -16,6 +16,7 @@ The most advanced open-source Content Management Framework to build powerful API
 > [Read the Medium post to have full explaination](https://medium.com/@lucaperret/strapi-quickstart-with-docker-d77ca7c86c1f)
 
 1. `git clone https://github.com/strapi/strapi-docker && cd strapi-docker`
+3. Update .env file
 2. Run using `docker-compose up`
 
 ## Pull from Docker Hub
