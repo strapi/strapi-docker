@@ -5,20 +5,20 @@ services:
     build: .
     #image: strapi/strapi
     environment:
-      - APP_NAME=tourserv-app
+      - APP_NAME
       - DATABASE_CLIENT=mongo
       - DATABASE_HOST=db
       - DATABASE_PORT=27017
-      - DATABASE_NAME=tourserv_db
-      - DATABASE_USERNAME=
-      - DATABASE_PASSWORD=
+      - DATABASE_NAME
+      - DATABASE_USERNAME
+      - DATABASE_PASSWORD
       - DATABASE_SSL=false
-      - DATABASE_AUTHENTICATION_DATABASE=tourserv_db
+      - DATABASE_AUTHENTICATION_DATABASE=${DATABASE_NAME}
       - HOST=localhost
     ports:
       - 1337:1337
     volumes:
-      - ./tourserv-app:/usr/src/api/tourserv-app
+      - ./product-inventory-app:/usr/src/api/product-inventory-app
       #- /usr/src/api/strapi-app/node_modules
     depends_on:
       - db
@@ -27,9 +27,12 @@ services:
   db:
     image: mongo
     environment:
-      - MONGO_INITDB_DATABASE=tourserv_db
+      - MONGO_INITDB_DATABASE=${DATABASE_NAME}
+      - MONGO_INITDB_ROOT_USERNAME=${DATABASE_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${DATABASE_PASSWORD}
     ports:
       - 27017:27017
     volumes:
       - ./db:/data/db
+      - ./script-folder/:/docker-entrypoint-initdb.d
     restart: always
