@@ -34,5 +34,5 @@ services:
       - 27017:27017
     volumes:
       - ./db:/data/db
-      - ./script-folder/:/docker-entrypoint-initdb.d
+      - ./entryScript/:/docker-entrypoint-initdb.d
     restart: always
