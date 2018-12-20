@@ -11,9 +11,11 @@ LABEL maintainer="Luca Perret <perret.luca@gmail.com>" \
 
 WORKDIR /usr/src/api
 
+ARG STRAPI_VERSION=3.0.0-alpha.17
+
 RUN echo "unsafe-perm = true" >> ~/.npmrc
 
-RUN npm install -g strapi@3.0.0-alpha.16
+RUN npm install -g strapi@$STRAPI_VERSION
 
 COPY strapi.sh ./
 RUN chmod +x ./strapi.sh
