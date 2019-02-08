@@ -12,6 +12,8 @@ services:
       - DATABASE_NAME=strapi
       - DATABASE_USERNAME=
       - DATABASE_PASSWORD=
+      - DATABASE_SSL=false
+      - DATABASE_AUTHENTICATION_DATABASE=strapi
       - HOST=localhost
     ports:
       - 1337:1337
