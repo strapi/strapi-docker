@@ -7,8 +7,10 @@ services:
     environment:
       - APP_NAME=strapi-app
       - DATABASE_CLIENT=mongo
+      #- DATABASE_CLIENT=mysql
       - DATABASE_HOST=db
       - DATABASE_PORT=27017
+      #- DATABASE_PORT=3306
       - DATABASE_NAME=strapi
       - DATABASE_USERNAME=
       - DATABASE_PASSWORD=
@@ -33,3 +35,15 @@ services:
     volumes:
       - ./db:/data/db
     restart: always
+
+  # Mysql Config
+  #db:
+    #image: mysql
+    #command: --default-authentication-plugin=mysql_native_password
+    #restart: always
+    #ports:
+      #- 3306:3306
+    #environment:
+      #MYSQL_ROOT_PASSWORD:
+      #MYSQL_DATABASE: strapi
+
