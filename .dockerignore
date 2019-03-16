@@ -4,5 +4,6 @@
 .git
 .gitattributes
 .travis.yml
+.env
 README.md
 docker-compose.yml

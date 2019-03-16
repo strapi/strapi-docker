@@ -3,18 +3,9 @@ version: '3'
 services:
   api:
     build: .
+    env_file:
+      - .env
     image: strapi/strapi
-    environment:
-      - APP_NAME=strapi-app
-      - DATABASE_CLIENT=mongo
-      - DATABASE_HOST=db
-      - DATABASE_PORT=27017
-      - DATABASE_NAME=strapi
-      - DATABASE_USERNAME=
-      - DATABASE_PASSWORD=
-      - DATABASE_SSL=false
-      - DATABASE_AUTHENTICATION_DATABASE=strapi
-      - HOST=localhost
     ports:
       - 1337:1337
     volumes:
@@ -26,8 +17,8 @@ services:
 
   db:
     image: mongo
-    environment:
-      - MONGO_INITDB_DATABASE=strapi
+    env_file:
+      - .env
     ports:
       - 27017:27017
     volumes:
