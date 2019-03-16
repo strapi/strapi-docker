@@ -1,0 +1,41 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "csa",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "localPoint": {
+      "default": "",
+      "type": "string"
+    },
+    "created_at": {
+      "default": "",
+      "type": "date",
+      "required": true
+    },
+    "updated_at": {
+      "default": "",
+      "type": "date"
+    },
+    "users": {
+      "collection": "user",
+      "via": "csa",
+      "plugin": "users-permissions"
+    }
+  }
+}

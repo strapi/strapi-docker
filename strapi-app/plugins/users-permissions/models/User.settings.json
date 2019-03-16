@@ -48,6 +48,10 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "csa": {
+      "model": "csa",
+      "via": "users"
     }
   },
   "collectionName": "users-permissions_user"

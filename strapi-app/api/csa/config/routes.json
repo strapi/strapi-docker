@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/csas",
+      "handler": "Csa.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/csas/count",
+      "handler": "Csa.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/csas/:_id",
+      "handler": "Csa.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/csas",
+      "handler": "Csa.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/csas/:_id",
+      "handler": "Csa.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/csas/:_id",
+      "handler": "Csa.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
