@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/cofarmers",
+      "handler": "Cofarmer.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cofarmers/count",
+      "handler": "Cofarmer.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cofarmers/:_id",
+      "handler": "Cofarmer.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/cofarmers",
+      "handler": "Cofarmer.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/cofarmers/:_id",
+      "handler": "Cofarmer.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/cofarmers/:_id",
+      "handler": "Cofarmer.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

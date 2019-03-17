@@ -1,0 +1,42 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "cofarmer",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "created_at": {
+      "default": "",
+      "type": "date",
+      "required": true
+    },
+    "email": {
+      "default": "",
+      "type": "email",
+      "required": true
+    },
+    "password": {
+      "default": "",
+      "type": "password",
+      "required": true
+    },
+    "csa": {
+      "model": "csa",
+      "via": "cofarmers"
+    }
+  }
+}

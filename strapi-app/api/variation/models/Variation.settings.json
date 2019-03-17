@@ -1,8 +1,8 @@
 {
   "connection": "default",
-  "collectionName": "csa",
+  "collectionName": "",
   "info": {
-    "name": "csa",
+    "name": "variation",
     "description": ""
   },
   "options": {
@@ -19,9 +19,16 @@
       "type": "text",
       "required": true
     },
-    "localPoint": {
-      "default": "",
-      "type": "string"
+    "routine": {
+      "model": "routine",
+      "via": "variations"
+    },
+    "user": {
+      "columnName": "user",
+      "model": "user",
+      "via": "variations",
+      "dominant": true,
+      "plugin": "users-permissions"
     },
     "created_at": {
       "default": "",
@@ -31,18 +38,6 @@
     "updated_at": {
       "default": "",
       "type": "date"
-    },
-    "routines": {
-      "collection": "routine",
-      "via": "csa"
-    },
-    "farmers": {
-      "collection": "farmer",
-      "via": "csa"
-    },
-    "cofarmers": {
-      "collection": "cofarmer",
-      "via": "csa"
     }
   }
 }

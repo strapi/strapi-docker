@@ -1,8 +1,8 @@
 {
   "connection": "default",
-  "collectionName": "csa",
+  "collectionName": "",
   "info": {
-    "name": "csa",
+    "name": "routine",
     "description": ""
   },
   "options": {
@@ -16,12 +16,8 @@
     },
     "description": {
       "default": "",
-      "type": "text",
+      "type": "string",
       "required": true
-    },
-    "localPoint": {
-      "default": "",
-      "type": "string"
     },
     "created_at": {
       "default": "",
@@ -32,17 +28,13 @@
       "default": "",
       "type": "date"
     },
-    "routines": {
-      "collection": "routine",
-      "via": "csa"
+    "csa": {
+      "model": "csa",
+      "via": "routines"
     },
-    "farmers": {
-      "collection": "farmer",
-      "via": "csa"
-    },
-    "cofarmers": {
-      "collection": "cofarmer",
-      "via": "csa"
+    "variations": {
+      "collection": "variation",
+      "via": "routine"
     }
   }
 }

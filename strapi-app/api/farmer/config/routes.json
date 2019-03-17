@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/farmers",
+      "handler": "Farmer.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/farmers/count",
+      "handler": "Farmer.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/farmers/:_id",
+      "handler": "Farmer.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/farmers",
+      "handler": "Farmer.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/farmers/:_id",
+      "handler": "Farmer.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/farmers/:_id",
+      "handler": "Farmer.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

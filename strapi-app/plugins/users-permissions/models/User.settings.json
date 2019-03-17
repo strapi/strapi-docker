@@ -49,9 +49,20 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "csa": {
-      "model": "csa",
-      "via": "users"
+    "firstname": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "variations": {
+      "collection": "variation",
+      "via": "user",
+      "columnName": "variations"
     }
   },
   "collectionName": "users-permissions_user"

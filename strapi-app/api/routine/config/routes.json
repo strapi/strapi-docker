@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/routines",
+      "handler": "Routine.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/routines/count",
+      "handler": "Routine.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/routines/:_id",
+      "handler": "Routine.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/routines",
+      "handler": "Routine.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/routines/:_id",
+      "handler": "Routine.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/routines/:_id",
+      "handler": "Routine.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
