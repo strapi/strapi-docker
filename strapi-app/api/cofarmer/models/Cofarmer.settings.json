@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "cofarmer",
   "info": {
     "name": "cofarmer",
     "description": ""
@@ -37,6 +37,10 @@
     "csa": {
       "model": "csa",
       "via": "cofarmers"
+    },
+    "role": {
+      "model": "role",
+      "plugin": "users-permissions"
     }
   }
 }
