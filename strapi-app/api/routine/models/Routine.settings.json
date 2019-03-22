@@ -35,6 +35,10 @@
     "variations": {
       "collection": "variation",
       "via": "routine"
+    },
+    "topics": {
+      "collection": "topic",
+      "via": "routine"
     }
   }
 }

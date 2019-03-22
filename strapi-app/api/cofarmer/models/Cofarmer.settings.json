@@ -41,6 +41,18 @@
     "role": {
       "model": "role",
       "plugin": "users-permissions"
+    },
+    "topics": {
+      "collection": "topic",
+      "via": "creator cofarmer"
+    },
+    "interested topics": {
+      "collection": "topic",
+      "via": "interested cofarmers"
+    },
+    "answers": {
+      "collection": "answer",
+      "via": "creator cofarmer"
     }
   }
 }

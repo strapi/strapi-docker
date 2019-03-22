@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "farmer",
   "info": {
     "name": "farmer",
     "description": ""
@@ -32,6 +32,22 @@
     "csa": {
       "model": "csa",
       "via": "farmers"
+    },
+    "role": {
+      "model": "role",
+      "plugin": "users-permissions"
+    },
+    "topics": {
+      "collection": "topic",
+      "via": "creator farmer"
+    },
+    "interested topics": {
+      "collection": "topic",
+      "via": "interested farmers"
+    },
+    "answers": {
+      "collection": "answer",
+      "via": "creator farmer"
     }
   }
 }
