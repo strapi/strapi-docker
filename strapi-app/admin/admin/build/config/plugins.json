@@ -16,6 +16,14 @@
     }
   },
   {
+    "id": "documentation",
+    "source": {
+      "development": "/documentation/main.js",
+      "production": "/documentation/main.js",
+      "staging": "/documentation/main.js"
+    }
+  },
+  {
     "id": "email",
     "source": {
       "development": "/email/main.js",
