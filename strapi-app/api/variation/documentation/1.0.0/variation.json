@@ -614,6 +614,30 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "comissions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "createdTopics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "interestedTopics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "answers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },

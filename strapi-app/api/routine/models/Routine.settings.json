@@ -38,7 +38,7 @@
     },
     "topics": {
       "collection": "topic",
-      "via": "routine"
+      "via": "routines"
     }
   }
 }

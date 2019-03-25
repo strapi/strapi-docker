@@ -578,6 +578,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "comissions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -621,8 +627,7 @@
               "required": [
                 "id",
                 "title",
-                "description",
-                "created at"
+                "description"
               ],
               "properties": {
                 "id": {
@@ -634,34 +639,22 @@
                 "description": {
                   "type": "string"
                 },
-                "creator farmer": {
-                  "type": "string"
-                },
-                "creator cofarmer": {
-                  "type": "string"
-                },
-                "routine": {
-                  "type": "string"
-                },
-                "created at": {
-                  "type": "string"
-                },
-                "updated at": {
-                  "type": "string"
-                },
-                "interested cofarmers": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "interested farmers": {
+                "routines": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
                 },
                 "answers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "creator": {
+                  "type": "string"
+                },
+                "interestedUsers": {
                   "type": "array",
                   "items": {
                     "type": "string"

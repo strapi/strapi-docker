@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "answer",
   "info": {
     "name": "answer",
     "description": ""
@@ -13,26 +13,15 @@
       "model": "topic",
       "via": "answers"
     },
-    "creator cofarmer": {
-      "model": "cofarmer",
-      "via": "answers"
-    },
-    "creator farmer": {
-      "model": "farmer",
-      "via": "answers"
-    },
     "message": {
       "default": "",
       "type": "text",
       "required": true
     },
-    "created_at": {
-      "default": "",
-      "type": "date"
-    },
-    "updated_at": {
-      "default": "",
-      "type": "date"
+    "user": {
+      "model": "user",
+      "via": "answers",
+      "plugin": "users-permissions"
     }
   }
 }

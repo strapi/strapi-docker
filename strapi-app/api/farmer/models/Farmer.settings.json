@@ -36,18 +36,6 @@
     "role": {
       "model": "role",
       "plugin": "users-permissions"
-    },
-    "topics": {
-      "collection": "topic",
-      "via": "creator farmer"
-    },
-    "interested topics": {
-      "collection": "topic",
-      "via": "interested farmers"
-    },
-    "answers": {
-      "collection": "answer",
-      "via": "creator farmer"
     }
   }
 }

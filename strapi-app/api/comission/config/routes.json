@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/comissions",
+      "handler": "Comission.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/comissions/count",
+      "handler": "Comission.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/comissions/:_id",
+      "handler": "Comission.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/comissions",
+      "handler": "Comission.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/comissions/:_id",
+      "handler": "Comission.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/comissions/:_id",
+      "handler": "Comission.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

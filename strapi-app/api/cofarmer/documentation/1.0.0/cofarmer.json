@@ -584,6 +584,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "comissions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -614,148 +620,6 @@
               "users": {
                 "type": "array",
                 "items": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "topics": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "description",
-                "created at"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "creator farmer": {
-                  "type": "string"
-                },
-                "creator cofarmer": {
-                  "type": "string"
-                },
-                "routine": {
-                  "type": "string"
-                },
-                "created at": {
-                  "type": "string"
-                },
-                "updated at": {
-                  "type": "string"
-                },
-                "interested cofarmers": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "interested farmers": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "answers": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "interested topics": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "description",
-                "created at"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "creator farmer": {
-                  "type": "string"
-                },
-                "creator cofarmer": {
-                  "type": "string"
-                },
-                "routine": {
-                  "type": "string"
-                },
-                "created at": {
-                  "type": "string"
-                },
-                "updated at": {
-                  "type": "string"
-                },
-                "interested cofarmers": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "interested farmers": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "answers": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "answers": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "message"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "topic": {
-                  "type": "string"
-                },
-                "creator cofarmer": {
-                  "type": "string"
-                },
-                "creator farmer": {
-                  "type": "string"
-                },
-                "message": {
-                  "type": "string"
-                },
-                "created_at": {
-                  "type": "string"
-                },
-                "updated_at": {
                   "type": "string"
                 }
               }
@@ -797,24 +661,6 @@
           },
           "role": {
             "type": "string"
-          },
-          "topics": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "interested topics": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "answers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       }

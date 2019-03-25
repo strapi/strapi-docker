@@ -1205,6 +1205,138 @@
                 }
               }
             }
+          },
+          "comissions": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "csa": {
+                  "type": "string"
+                },
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "createdTopics": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title",
+                "description"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "routines": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "answers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "creator": {
+                  "type": "string"
+                },
+                "interestedUsers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "interestedTopics": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title",
+                "description"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "routines": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "answers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "creator": {
+                  "type": "string"
+                },
+                "interestedUsers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "message"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "topic": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1254,6 +1386,30 @@
             "default": ""
           },
           "variations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdTopics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "interestedTopics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "answers": {
             "type": "array",
             "items": {
               "type": "string"

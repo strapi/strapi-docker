@@ -43,6 +43,10 @@
     "cofarmers": {
       "collection": "cofarmer",
       "via": "csa"
+    },
+    "comissions": {
+      "collection": "comission",
+      "via": "csa"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "topic",
   "info": {
     "name": "topic",
     "description": ""
@@ -19,41 +19,26 @@
       "type": "text",
       "required": true
     },
-    "creator farmer": {
-      "model": "farmer",
+    "routines": {
+      "unique": true,
+      "collection": "routine",
       "via": "topics",
-      "dominant": true
-    },
-    "creator cofarmer": {
-      "model": "cofarmer",
-      "via": "topics"
-    },
-    "routine": {
-      "model": "routine",
-      "via": "topics"
-    },
-    "created at": {
-      "default": "",
-      "type": "date",
-      "required": true
-    },
-    "updated at": {
-      "default": "",
-      "type": "date"
-    },
-    "interested cofarmers": {
-      "collection": "cofarmer",
-      "via": "interested topics",
-      "dominant": true
-    },
-    "interested farmers": {
-      "collection": "farmer",
-      "via": "interested topics",
       "dominant": true
     },
     "answers": {
       "collection": "answer",
       "via": "topic"
+    },
+    "creator": {
+      "model": "user",
+      "via": "createdTopics",
+      "plugin": "users-permissions"
+    },
+    "interestedUsers": {
+      "collection": "user",
+      "via": "interestedTopics",
+      "dominant": true,
+      "plugin": "users-permissions"
     }
   }
 }
