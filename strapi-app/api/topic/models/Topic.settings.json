@@ -20,10 +20,9 @@
       "required": true
     },
     "routines": {
-      "unique": true,
       "collection": "routine",
-      "via": "topics",
-      "dominant": true
+      "dominant": true,
+      "via": "topics"
     },
     "answers": {
       "collection": "answer",

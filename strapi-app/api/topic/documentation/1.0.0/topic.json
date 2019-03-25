@@ -532,8 +532,7 @@
               "required": [
                 "id",
                 "name",
-                "description",
-                "created_at"
+                "description"
               ],
               "properties": {
                 "id": {
@@ -545,14 +544,11 @@
                 "description": {
                   "type": "string"
                 },
-                "created_at": {
-                  "type": "string"
-                },
-                "updated_at": {
-                  "type": "string"
-                },
                 "csa": {
-                  "type": "string"
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "variations": {
                   "type": "array",

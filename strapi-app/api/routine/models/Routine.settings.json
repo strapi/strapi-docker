@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "routine",
   "info": {
     "name": "routine",
     "description": ""
@@ -19,18 +19,10 @@
       "type": "string",
       "required": true
     },
-    "created_at": {
-      "default": "",
-      "type": "date",
-      "required": true
-    },
-    "updated_at": {
-      "default": "",
-      "type": "date"
-    },
     "csa": {
-      "model": "csa",
-      "via": "routines"
+      "collection": "csa",
+      "via": "routines",
+      "dominant": true
     },
     "variations": {
       "collection": "variation",

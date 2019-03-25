@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/25/2019 6:38:38 PM"
+    "x-generation-date": "03/25/2019 8:25:19 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6638,8 +6638,7 @@
               "required": [
                 "id",
                 "name",
-                "description",
-                "created_at"
+                "description"
               ],
               "properties": {
                 "id": {
@@ -6651,14 +6650,11 @@
                 "description": {
                   "type": "string"
                 },
-                "created_at": {
-                  "type": "string"
-                },
-                "updated_at": {
-                  "type": "string"
-                },
                 "csa": {
-                  "type": "string"
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "variations": {
                   "type": "array",
@@ -6979,8 +6975,7 @@
         "required": [
           "id",
           "name",
-          "description",
-          "created_at"
+          "description"
         ],
         "properties": {
           "id": {
@@ -6994,62 +6989,57 @@
             "type": "string",
             "default": ""
           },
-          "created_at": {
-            "type": "string",
-            "default": ""
-          },
-          "updated_at": {
-            "type": "string",
-            "default": ""
-          },
           "csa": {
-            "required": [
-              "id",
-              "name",
-              "description",
-              "created_at"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "localPoint": {
-                "type": "string"
-              },
-              "created_at": {
-                "type": "string"
-              },
-              "updated_at": {
-                "type": "string"
-              },
-              "routines": {
-                "type": "array",
-                "items": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "description",
+                "created_at"
+              ],
+              "properties": {
+                "id": {
                   "type": "string"
-                }
-              },
-              "farmers": {
-                "type": "array",
-                "items": {
+                },
+                "name": {
                   "type": "string"
-                }
-              },
-              "cofarmers": {
-                "type": "array",
-                "items": {
+                },
+                "description": {
                   "type": "string"
-                }
-              },
-              "comissions": {
-                "type": "array",
-                "items": {
+                },
+                "localPoint": {
                   "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "routines": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "farmers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "cofarmers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "comissions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -7135,8 +7125,7 @@
       "NewRoutine": {
         "required": [
           "name",
-          "description",
-          "created_at"
+          "description"
         ],
         "properties": {
           "name": {
@@ -7147,16 +7136,11 @@
             "type": "string",
             "default": ""
           },
-          "created_at": {
-            "type": "string",
-            "default": ""
-          },
-          "updated_at": {
-            "type": "string",
-            "default": ""
-          },
           "csa": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "variations": {
             "type": "array",
@@ -7196,8 +7180,7 @@
               "required": [
                 "id",
                 "name",
-                "description",
-                "created_at"
+                "description"
               ],
               "properties": {
                 "id": {
@@ -7209,14 +7192,11 @@
                 "description": {
                   "type": "string"
                 },
-                "created_at": {
-                  "type": "string"
-                },
-                "updated_at": {
-                  "type": "string"
-                },
                 "csa": {
-                  "type": "string"
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "variations": {
                   "type": "array",
@@ -7469,8 +7449,7 @@
             "required": [
               "id",
               "name",
-              "description",
-              "created_at"
+              "description"
             ],
             "properties": {
               "id": {
@@ -7482,14 +7461,11 @@
               "description": {
                 "type": "string"
               },
-              "created_at": {
-                "type": "string"
-              },
-              "updated_at": {
-                "type": "string"
-              },
               "csa": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "variations": {
                 "type": "array",
