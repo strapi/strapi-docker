@@ -18,6 +18,7 @@ services:
     ports:
       - 1337:1337
     volumes:
+      - strapiAppFiles:/usr/src/api/strapi-app
       - ./config:/usr/src/api/strapi-app/config
     depends_on:
       - db
@@ -32,3 +33,5 @@ services:
     volumes:
       - ./db:/data/db
     restart: always
+volumes:
+  strapiAppFiles:
