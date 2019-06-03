@@ -13,10 +13,10 @@ WORKDIR /usr/src/api
 
 RUN echo "unsafe-perm = true" >> ~/.npmrc
 
-RUN apk update && \
-      apk add --virtual build-deps build-base gcc autoconf automake && \
+RUN apk add --update --virtual build-deps build-base gcc autoconf automake && \
       npm install -g strapi@beta && \
-      apk del build-deps
+      apk del build-deps && \
+      && rm -rf /var/cache/apk/*
 
 COPY strapi.sh ./
 RUN chmod +x ./strapi.sh
