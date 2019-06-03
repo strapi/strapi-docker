@@ -16,7 +16,7 @@ RUN echo "unsafe-perm = true" >> ~/.npmrc
 RUN apk add --update --virtual build-deps build-base gcc autoconf automake && \
       npm install -g strapi@beta && \
       apk del build-deps && \
-      && rm -rf /var/cache/apk/*
+      rm -rf /var/cache/apk/*
 
 COPY strapi.sh ./
 RUN chmod +x ./strapi.sh
