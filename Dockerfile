@@ -14,7 +14,7 @@ WORKDIR /usr/src/api
 RUN echo "unsafe-perm = true" >> ~/.npmrc
 
 RUN apk update && \
-      apk add --virtual build-deps build-base gcc autoconf && \
+      apk add --virtual build-deps build-base gcc autoconf automake && \
       npm install -g strapi@beta && \
       apk del build-deps
 
