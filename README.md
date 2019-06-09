@@ -21,7 +21,7 @@ The most advanced open-source Content Management Framework to build powerful API
 ## Pull from Docker Hub
 
 ```bash
-docker pull strapi/strapi
+docker pull strapi/strapi:beta
 ```
 
 ### Then run image
@@ -46,7 +46,7 @@ docker run -e APP_NAME=strapi-app \
            -v `pwd`/strapi-app:/usr/src/api/strapi-app \
            --link strapi-mongo:mongo \
            -p 1337:1337 \
-           --name strapi -d strapi/strapi
+           --name strapi -d strapi/strapi:beta
 ```
 
 You should the be able to access your Strapi installation at [localhost:1337](http://localhost:1337).
@@ -54,8 +54,15 @@ You should the be able to access your Strapi installation at [localhost:1337](ht
 ## Use as base image
 
 ```Dockerfile
-FROM strapi/strapi
+FROM strapi/strapi:beta
 ```
+
+If you want to build a deployable Docker image for your Strapi-based project, use a [multi-stage build][multi] to keep
+the final image size down.
+
+Check `Dockerfile.multistage` for an example of such a build.
+
+[multi]: https://docs.docker.com/develop/develop-images/multistage-build/
 
 ## Environment variables
 
@@ -63,7 +70,8 @@ FROM strapi/strapi
 - `DATABASE_CLIENT` a database providers supported by Strapi: MongoDB, Postgres, MySQL, Sqlite3 and Redis.
 - `DATABASE_HOST` database service name.
 - `DATABASE_PORT` depends on your database client.
-- `DATABASE_NAME` initializes a database with specific name (default strapi). When using MongoDB, you should also update the `MONGO_INITDB_DATABASE` environment in the db service.
+- `DATABASE_NAME` initializes a database with specific name (default strapi). When using MongoDB, you should also update 
+  the `MONGO_INITDB_DATABASE` environment in the db service.
 - `DATABASE_USERNAME` set the username of the database connection.
 - `DATABASE_PASSWORD` set the password of the database connection.
 - `DATABASE_SRV` boolean for SRV.

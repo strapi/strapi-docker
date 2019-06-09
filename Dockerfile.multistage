@@ -1,0 +1,24 @@
+FROM strapi/strapi:beta AS builder
+
+ARG APP_NAME
+ENV APP_NAME=${APP_NAME:-strapi-app}
+
+# build Strapi app
+WORKDIR /usr/src/api
+COPY . .
+RUN npm install --prefix "./$APP_NAME"
+
+
+# use the regular alpine-based image for your deployment image
+FROM node:10-alpine
+
+ARG APP_NAME
+ENV APP_NAME=${APP_NAME:-strapi-app}
+
+# copy over pre-built packages from builder image
+COPY --from=builder /usr/src/api /usr/src/api/
+
+# run Strapi
+WORKDIR /usr/src/api
+RUN chmod +x ./strapi.sh
+CMD ["./strapi.sh"]
