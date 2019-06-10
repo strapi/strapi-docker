@@ -14,9 +14,16 @@ WORKDIR /usr/src/api
 RUN echo "unsafe-perm = true" >> ~/.npmrc
 
 RUN apk add --no-cache \
-  autoconf automake gcc libc-dev libtool make nasm zlib-dev && \
-  npm install -g strapi@beta && \
-  apk del libtool nasm
+  autoconf \
+  automake \
+  gcc \
+  libc-dev \
+  libtool \
+  make \
+  nasm \
+  zlib-dev
+
+RUN npm install -g strapi@beta
 
 COPY strapi.sh ./
 RUN chmod +x ./strapi.sh
