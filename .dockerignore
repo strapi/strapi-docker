@@ -6,3 +6,4 @@
 .travis.yml
 README.md
 docker-compose.yml
+db
