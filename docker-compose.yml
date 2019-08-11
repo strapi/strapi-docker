@@ -31,5 +31,9 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./db:/data/db
+      - strapi_mongodb_data:/data/db
     restart: always
+
+volumes:
+    strapi_mongodb_data:
+        driver: local
