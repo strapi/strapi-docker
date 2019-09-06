@@ -1,23 +1,25 @@
 #!/bin/sh
-set -ea
 
-_stopStrapi() {
-  echo "Stopping strapi"
-  kill -SIGINT "$strapiPID"
-  wait "$strapiPID"
-}
 
-trap _stopStrapi SIGTERM SIGINT
-
-cd /usr/src/api
-
-APP_NAME=${APP_NAME:-strapi-app}
+APP_NAME=${APP_NAME:-strapi-app }
 DATABASE_CLIENT=${DATABASE_CLIENT:-mongo}
 DATABASE_HOST=${DATABASE_HOST:-localhost}
 DATABASE_PORT=${DATABASE_PORT:-27017}
 DATABASE_NAME=${DATABASE_NAME:-strapi}
 DATABASE_SRV=${DATABASE_SRV:-false}
 EXTRA_ARGS=${EXTRA_ARGS:-}
+
+echo $APP_NAME
+echo $DATABASE_HOST
+
+if [ ! -f "`which node`" ]
+then
+	echo "INSTALLING NODEJS"
+	curl -sL https://deb.nodesource.com/setup_11.x | bash -
+	apt-get install -y nodejs
+fi
+
+npm i -g strapi@beta
 
 if [ ! -f "$APP_NAME/package.json" ]
 then
@@ -28,7 +30,9 @@ then
 fi
 
 cd $APP_NAME
-strapi start &
-
-strapiPID=$!
-wait "$strapiPID"
+echo "CHANGING TO "$APP_NAME
+which strapi
+strapi develop
+# echo "DONE WITH STUFF"
+# strapiPID=$!
+# wait "$strapiPID"

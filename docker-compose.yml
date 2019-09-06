@@ -1,5 +1,4 @@
 version: '3'
-
 services:
   api:
     build: .
@@ -16,20 +15,18 @@ services:
       - DATABASE_AUTHENTICATION_DATABASE=strapi
       - HOST=localhost
     ports:
-      - 1337:1337
+      - '1337:1337'
     volumes:
-      - ./strapi-app:/usr/src/api/strapi-app
-      #- /usr/src/api/strapi-app/node_modules
+      - './strapi-app:/usr/src/api/strapi-app'
     depends_on:
       - db
     restart: always
-
   db:
     image: mongo
     environment:
       - MONGO_INITDB_DATABASE=strapi
     ports:
-      - 27017:27017
+      - '27017:27017'
     volumes:
-      - ./db:/data/db
+      - './db:/data/db'
     restart: always
