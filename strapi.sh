@@ -33,6 +33,3 @@ cd $APP_NAME
 echo "CHANGING TO "$APP_NAME
 which strapi
 strapi develop
-# echo "DONE WITH STUFF"
-# strapiPID=$!
-# wait "$strapiPID"
