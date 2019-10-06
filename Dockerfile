@@ -1,4 +1,4 @@
-FROM node:11.1.0-alpine
+FROM node:12-alpine
 
 LABEL maintainer="Luca Perret <perret.luca@gmail.com>" \
       org.label-schema.vendor="Strapi" \
@@ -9,11 +9,17 @@ LABEL maintainer="Luca Perret <perret.luca@gmail.com>" \
       org.label-schema.version=latest \
       org.label-schema.schema-version="1.0"
 
+RUN apk add --no-cache \
+      autoconf \
+      automake \
+      gcc \
+      libc-dev \
+      libtool \
+      make \
+      nasm \
+      zlib-dev
+
 WORKDIR /usr/src/api
-
-RUN echo "unsafe-perm = true" >> ~/.npmrc
-
-RUN npm install -g strapi@alpha
 
 COPY strapi.sh ./
 RUN chmod +x ./strapi.sh
