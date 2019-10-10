@@ -3,7 +3,8 @@ version: '3'
 services:
   api:
     build: .
-    image: strapi/strapi
+    # image: strapi/strapi
+    image: strapi-mongo
     environment:
       - APP_NAME=strapi-app
       - DATABASE_CLIENT=mongo
@@ -15,6 +16,7 @@ services:
       - DATABASE_SSL=false
       - DATABASE_AUTHENTICATION_DATABASE=strapi
       - HOST=localhost
+      - DEV_MODE=false
     ports:
       - 1337:1337
     volumes:

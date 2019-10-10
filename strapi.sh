@@ -18,6 +18,7 @@ DATABASE_PORT=${DATABASE_PORT:-27017}
 DATABASE_NAME=${DATABASE_NAME:-strapi}
 DATABASE_SRV=${DATABASE_SRV:-false}
 EXTRA_ARGS=${EXTRA_ARGS:-}
+DEV_MODE=${DEV_MODE:-true}
 
 if [ ! -f "$APP_NAME/package.json" ]
 then
@@ -28,8 +29,15 @@ then
 fi
 
 cd $APP_NAME
-yarn build
-yarn start &
+if [ "$DEV_MODE" = true ]
+then
+  echo "Starting application with autoReload enabled ..."
+  yarn develop &
+else
+  echo "Building admin panel and starting application with autoReload disabled ..."
+  yarn build
+  yarn start &
+fi
 
 strapiPID=$!
 wait "$strapiPID"
