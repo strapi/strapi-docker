@@ -69,3 +69,4 @@ FROM strapi/strapi
 - `DATABASE_SRV` boolean for SRV.
 - `DATABASE_SSL` boolean for SSL.
 - `DATABASE_AUTHENTICATION_DATABASE` set the authentification.
+- `EXTRA_ARGS` add any Extra supported arguments in the form of a string.
