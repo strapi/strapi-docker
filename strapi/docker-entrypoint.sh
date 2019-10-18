@@ -19,7 +19,6 @@ if [ "$1" = "strapi" ]; then
       --dbusername=$DATABASE_USERNAME \
       --dbpassword=$DATABASE_PASSWORD \
       --dbssl=$DATABASE_SSL \
-      --dbssl=$DATABASE_SSL \
       --dbsrv=$DATABASE_SRV \
       --dbauth=$DATABASE_AUTH \
       $EXTRA_ARGS

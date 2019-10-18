@@ -5,6 +5,7 @@ services:
     container_name: strapi
     image: strapi/strapi
     environment:
+      - NODE_ENV=production
       - DATABASE_CLIENT=postgres
       - DATABASE_HOST=db
       - DATABASE_PORT=5432
@@ -17,6 +18,7 @@ services:
       - ./app:/srv/app
     depends_on:
       - db
+    command: 'strapi start'
 
   db:
     container_name: postgres
