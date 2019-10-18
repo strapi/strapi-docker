@@ -9,7 +9,8 @@ if [ "$1" = "strapi" ]; then
 
     EXTRA_ARGS=${EXTRA_ARGS}
 
-    echo "$ARGS"
+    echo "Using strapi $(strapi -v)"
+    echo "No project found at /srv/app. Creating a new strapi project"
 
     strapi new . \
       --dbclient=$DATABASE_CLIENT \
@@ -24,6 +25,8 @@ if [ "$1" = "strapi" ]; then
       $EXTRA_ARGS
 
   elif [ ! -d "node_modules" ]; then
+
+    echo "Node modules not installed. Installing..."
 
     if [ -f "yarn.lock" ]; then
 
