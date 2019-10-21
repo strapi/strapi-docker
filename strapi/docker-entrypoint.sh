@@ -20,8 +20,6 @@ if [ "$1" = "strapi" ]; then
       --dbusername=$DATABASE_USERNAME \
       --dbpassword=$DATABASE_PASSWORD \
       --dbssl=$DATABASE_SSL \
-      --dbsrv=$DATABASE_SRV \
-      --dbauth=$DATABASE_AUTH \
       $EXTRA_ARGS
 
   elif [ ! -d "node_modules" ]; then
@@ -41,5 +39,7 @@ if [ "$1" = "strapi" ]; then
   fi
 
 fi
+
+echo "Starting your app..."
 
 exec "$@"

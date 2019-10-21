@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-const path = require('path');
+const got = require('got');
 
 const yargs = require('yargs');
 const execa = require('execa');
 const semver = require('semver');
 
-const types = ['base', 'strapi'];
+const REPO = 'strapi/strapi';
 const NODE_VERSIONS = [10, 12];
 const LATEST_NODE_VERSION = 12;
 
@@ -44,7 +44,12 @@ async function buildBaseImage({ nodeVersion, alpine }) {
   await execDocker(['image', 'rm', tmpImg]);
 }
 
-async function buildStrapiImages(version) {
+async function buildStrapiImages() {
+  let version = process.env.STRAPI_VERSION;
+  if (version === 'latest' || !version) {
+    version = await getLatestStrapiRelease();
+  }
+
   if (semver.valid(version) === null) {
     throw new Error('Invalid strapi version provided: ' + version);
   }
@@ -129,10 +134,6 @@ const argv = yargs
     default: 'all',
     type: 'string',
   })
-  .option('strapi-version', {
-    describe: 'Which strapi version to build',
-    type: 'string',
-  })
   .version(false)
   .help('h')
   .alias('h', 'help').argv;
@@ -148,13 +149,13 @@ async function run() {
       break;
     }
     case 'strapi': {
-      await buildStrapiImages(argv.strapiVersion);
+      await buildStrapiImages();
       break;
     }
     case 'all':
     default: {
       await buildBaseImages();
-      await buildStrapiImages(argv.strapiVersion);
+      await buildStrapiImages();
       break;
     }
   }
@@ -164,3 +165,12 @@ run().catch(error => {
   console.error(error);
   process.exit(1);
 });
+
+async function getLatestStrapiRelease() {
+  const { body } = await got(
+    `https://api.github.com/repos/${REPO}/releases/latest`,
+    { json: true }
+  );
+
+  return body.tag_name.slice(1); // remove the v prefix
+}
