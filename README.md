@@ -20,21 +20,24 @@ Use [`strapi/base`](#strapi-base) to build a Dockerfile and create an image for 
 
 ## How to use `strapi/strapi`
 
-This image allows you to create a new strapi project or run a project form your host machine. The default command that will run in your project is `strapi develop`.
+This image allows you to create a new strapi project or run a project form your host machine. The default command that will run in your project is [`strapi develop`](https://strapi.io/documentation/3.0.0-beta.x/cli/CLI.html#strapi-develop-dev).
 
 ### Creating a new project
 
-When running this image strapi will check if there is a project in the `/src/app` folder of the container. If there is nothing then it will run the `strapi new` command in this folder. You can create a new project by running this command.
+When running this image, strapi will check if there is a project in the `/src/app` folder of the container. If there is nothing then it will run the [`strapi new`](https://strapi.io/documentation/3.0.0-beta.x/cli/CLI.html#strapi-new) command in the container /srv/app folder. You can create a new project by running this command.
 
-```
+```bash
 docker run -it -p 1337:1337 -v `pwd`/project-name:/srv/app strapi/strapi
 ```
 
-This command creates a project with an sqlite database. Then starts it on port 1337.
+This command creates a project with an SQLite database. Then starts it on port `1337`.
 
-When creating a new project with this image you can give pass a database config to the `strapi new` command.
+The `-v` option creates a `project-name` folder on your computer that will be shared with the docker container.
+Once the project is created it will be available in this folder on your computer.
 
 **Environment variables**
+
+When creating a new project with this image you can pass database configurations to the [`strapi new`](https://strapi.io/documentation/3.0.0-beta.x/cli/CLI.html#strapi-new) command.
 
 - `DATABASE_CLIENT` a database provider supported by Strapi: (sqlite, postgres, mysql ,mongo).
 - `DATABASE_HOST` database host.
@@ -43,22 +46,58 @@ When creating a new project with this image you can give pass a database config 
 - `DATABASE_USERNAME` database username.
 - `DATABASE_PASSWORD` database password.
 - `DATABASE_SSL` boolean for SSL.
-- `EXTRA_ARGS` pass extra args to the `strapi new`.
+- `EXTRA_ARGS` pass extra args to the [`strapi new`](https://strapi.io/documentation/3.0.0-beta.x/cli/CLI.html#strapi-new).
 
-You can see examples of using these variables with docker-compose in the [examples folder](./examples).
+**Example**
+
+You can create a strapi project that will connect to a remote postgres database like so:
+
+```bash
+docker run -it \
+  -e DATABASE_CLIENT=postgres \
+  -e DATABASE_NAME=strapi \
+  -e DATABASE_HOST=0.0.0.0 \
+  -e DATABASE_PORT=5432 \
+  -e DATABASE_USERNAME=strapi \
+  -e DATABASE_PASSWORD=strapi \
+  -p 1337:1337 \
+  -v `pwd`/project-name:/srv/app \
+  strapi/strapi
+```
+
+You can also create projects using docker-compose. See examples of using these variables with docker-compose in the [examples folder](./examples).
 
 ### Running a project from your host machine
 
 You can also use `strapi/strapi` to run a project you already have created (or cloned for a repo) on your computer.
 
-First make sure to delete the node_modules folder if you have already installed your dependencies on your host machine. Then run:
+First make sure to delete the `node_modules` folder if you have already installed your dependencies on your host machine. Then run:
 
-```
+```bash
 cd my-project
 docker run -it -p 1337:1337 -v `pwd`:/srv/app strapi/strapi
 ```
 
-This will start by installing the dependencies and then run `strapi develop` in the project. If you are using environment variables in your code make sure to pass them with the -e option (e.g `docker run -e ENV_VAR=sth ...`)
+This will start by installing the dependencies and then run `strapi develop` in the project.
+
+**Environment variables**
+
+If you are using environment variables in your code you can pass them with the -e option (e.g `docker run -e ENV_VAR=sth ...`).
+
+You can for example set your database configuration with envrionment variables.
+Because the default container command is [`strapi develop`](https://strapi.io/documentation/3.0.0-beta.x/cli/CLI.html#strapi-develop-dev) you will need to update your `development` database configuration following the `production` example in the [documentation](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#dynamic-configurations). Then you can run:
+
+```bash
+docker run -it \
+  -e DATABASE_NAME=strapi \
+  -e DATABASE_HOST=0.0.0.0 \
+  -e DATABASE_PORT=1234 \
+  -e DATABASE_USERNAME=strapi \
+  -e DATABASE_PASSWORD=strapi \
+  -p 1337:1337 \
+  -v `pwd`/project-name:/srv/app \
+  strapi/strapi
+```
 
 ## How to use `strapi/base`
 
