@@ -63,3 +63,11 @@ This will start by installing the dependencies and then run `strapi develop` in 
 ## How to use `strapi/base`
 
 When deploying a strapi application to production you can use docker to package your whole app in an image. You can create a Dockerfile in your strapi project like the one in [`./examples/custom`](./examples/custom)
+
+## Building the images in this repository
+
+You can build the images with the build command. To see the options run:
+
+```
+./bin/build.js --help
+```
