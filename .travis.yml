@@ -1,11 +1,11 @@
+language: node_js
+node_js:
+  - 12
+
 sudo: required
 
 services:
   - docker
 
 script:
-  - docker build -t strapi/strapi .
-  - docker-compose up -d
-  - sleep 60
-  - curl -f localhost:1337
-  - docker logs strapidocker_api_1
+  - ./bin/build.js --type=all

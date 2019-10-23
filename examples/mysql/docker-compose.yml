@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  strapi:
+    container_name: strapi
+    image: strapi/strapi
+    environment:
+      - DATABASE_CLIENT=mysql
+      - DATABASE_HOST=db
+      - DATABASE_PORT=3306
+      - DATABASE_NAME=strapi
+      - DATABASE_USERNAME=strapi
+      - DATABASE_PASSWORD=strapi
+    ports:
+      - 1337:1337
+    volumes:
+      - ./app:/srv/app
+    depends_on:
+      - db
+
+  db:
+    container_name: mysql
+    image: mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: strapi
+      MYSQL_USER: strapi
+      MYSQL_PASSWORD: strapi
+      MYSQL_ROOT_PASSWORD: strapi
+    volumes:
+      - ./db:/var/lib/mysql
