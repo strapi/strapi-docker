@@ -10,7 +10,10 @@ LABEL maintainer="Luca Perret <perret.luca@gmail.com>" \
       org.label-schema.schema-version="1.0"
 
 WORKDIR /usr/src/api
-
+RUN apk update && \
+    apk upgrade && \
+    apk add git g++ gcc libgcc libstdc++ linux-headers make python && \
+    apk update
 RUN echo "unsafe-perm = true" >> ~/.npmrc
 
 RUN npm install -g strapi@alpha
