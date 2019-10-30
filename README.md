@@ -14,9 +14,9 @@ The most advanced open-source Content Management Framework to build powerful API
 
 Strapi comes with two images: `strapi/strapi` and `strapi/base`.
 
-Use [`strapi/strapi`](#strapi-strapi) to create a new project or run a project on your host machine.
+Use [`strapi/strapi`](#how-to-use-strapistrapi) to create a new project or run a project on your host machine.
 
-Use [`strapi/base`](#strapi-base) to build a Dockerfile and create an image for your app.
+Use [`strapi/base`](#how-to-use-strapibase) to build a Dockerfile and create an image for your app.
 
 ## How to use `strapi/strapi`
 
