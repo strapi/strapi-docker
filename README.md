@@ -20,7 +20,7 @@ Use [`strapi/base`](#how-to-use-strapibase) to build a Dockerfile and create an 
 
 ## How to use `strapi/strapi`
 
-This image allows you to create a new strapi project or run a project form your host machine. The default command that will run in your project is [`strapi develop`](https://strapi.io/documentation/3.0.0-beta.x/cli/CLI.html#strapi-develop-dev).
+This image allows you to create a new strapi project or run a project from your host machine. The default command that will run in your project is [`strapi develop`](https://strapi.io/documentation/3.0.0-beta.x/cli/CLI.html#strapi-develop-dev).
 
 ### Creating a new project
 
