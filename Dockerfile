@@ -1,4 +1,4 @@
-FROM node:12.10.0-alpine
+FROM node:11.1.0-alpine
 
 LABEL maintainer="Baker <root@xyz.dev>" \
       org.label-schema.vendor="Strapi" \
