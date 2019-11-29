@@ -20,6 +20,7 @@ if [ "$1" = "strapi" ]; then
       --dbusername=$DATABASE_USERNAME \
       --dbpassword=$DATABASE_PASSWORD \
       --dbssl=$DATABASE_SSL \
+      --docker
       $EXTRA_ARGS
 
   elif [ ! -d "node_modules" ]; then
