@@ -11,6 +11,8 @@ if [ "$1" = "strapi" ]; then
 
     echo "Using strapi $(strapi -v)"
     echo "No project found at /srv/app. Creating a new strapi project"
+    
+    DOCKER=true
 
     strapi new . \
       --dbclient=$DATABASE_CLIENT \
@@ -20,7 +22,6 @@ if [ "$1" = "strapi" ]; then
       --dbusername=$DATABASE_USERNAME \
       --dbpassword=$DATABASE_PASSWORD \
       --dbssl=$DATABASE_SSL \
-      --docker
       $EXTRA_ARGS
 
   elif [ ! -d "node_modules" ]; then
