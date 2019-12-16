@@ -11,10 +11,8 @@ if [ "$1" = "strapi" ]; then
 
     echo "Using strapi $(strapi -v)"
     echo "No project found at /srv/app. Creating a new strapi project"
-    
-    DOCKER=true
 
-    strapi new . \
+    DOCKER=true strapi new . \
       --dbclient=$DATABASE_CLIENT \
       --dbhost=$DATABASE_HOST \
       --dbport=$DATABASE_PORT \
