@@ -30,7 +30,7 @@ if [ "$1" = "strapi" ]; then
 
       yarn install
 
-    elif [ -f "package-json.lock" ]; then
+    elif [ -f "package-lock.json" ]; then
 
       npm install
 
