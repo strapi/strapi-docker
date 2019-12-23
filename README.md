@@ -24,10 +24,10 @@ This image allows you to create a new strapi project or run a project from your 
 
 ### Creating a new project
 
-When running this image, strapi will check if there is a project in the `/src/app` folder of the container. If there is nothing then it will run the [`strapi new`](https://strapi.io/documentation/3.0.0-beta.x/cli/CLI.html#strapi-new) command in the container /srv/app folder. You can create a new project by running this command.
+When running this image, strapi will check if there is a project in the `/src/app` folder of the container. If there is nothing then it will run the [`strapi new`](https://strapi.io/documentation/3.0.0-beta.x/cli/CLI.html#strapi-new) command in the container /src/app folder. You can create a new project by running this command.
 
 ```bash
-docker run -it -p 1337:1337 -v `pwd`/project-name:/srv/app strapi/strapi
+docker run -it -p 1337:1337 -v `pwd`/project-name:/src/app strapi/strapi
 ```
 
 This command creates a project with an SQLite database. Then starts it on port `1337`.
@@ -61,7 +61,7 @@ docker run -it \
   -e DATABASE_USERNAME=strapi \
   -e DATABASE_PASSWORD=strapi \
   -p 1337:1337 \
-  -v `pwd`/project-name:/srv/app \
+  -v `pwd`/project-name:/src/app \
   strapi/strapi
 ```
 
@@ -75,7 +75,7 @@ First make sure to delete the `node_modules` folder if you have already installe
 
 ```bash
 cd my-project
-docker run -it -p 1337:1337 -v `pwd`:/srv/app strapi/strapi
+docker run -it -p 1337:1337 -v `pwd`:/src/app strapi/strapi
 ```
 
 This will start by installing the dependencies and then run `strapi develop` in the project.
@@ -95,7 +95,7 @@ docker run -it \
   -e DATABASE_USERNAME=strapi \
   -e DATABASE_PASSWORD=strapi \
   -p 1337:1337 \
-  -v `pwd`/project-name:/srv/app \
+  -v `pwd`/project-name:/src/app \
   strapi/strapi
 ```
 
