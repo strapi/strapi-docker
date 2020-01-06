@@ -84,7 +84,7 @@ This will start by installing the dependencies and then run `strapi develop` in 
 
 If you are using environment variables in your code you can pass them with the -e option (e.g `docker run -e ENV_VAR=sth ...`).
 
-You can for example set your database configuration with envrionment variables.
+You can for example set your database configuration with environment variables.
 Because the default container command is [`strapi develop`](https://strapi.io/documentation/3.0.0-beta.x/cli/CLI.html#strapi-develop-dev) you will need to update your `development` database configuration following the `production` example in the [documentation](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#dynamic-configurations). Then you can run:
 
 ```bash
