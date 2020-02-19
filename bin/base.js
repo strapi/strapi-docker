@@ -56,6 +56,8 @@ function buildBaseTags({ nodeVersion, alpine = false }) {
 
   if (nodeVersion === LATEST_NODE_VERSION && !alpine) {
     tags.push('latest');
+  } else if (nodeVersion === LATEST_NODE_VERSION && alpine) {
+    tags.push('alpine');
   }
 
   return tags;
