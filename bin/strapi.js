@@ -3,11 +3,7 @@
 const semver = require('semver');
 
 const { execDocker, getLatestStrapiRelease } = require('./utils');
-const {
-  STRAPI_IMAGE_NAME,
-  NODE_VERSIONS,
-  LATEST_NODE_VERSION,
-} = require('./contstants');
+const { STRAPI_IMAGE_NAME, NODE_VERSIONS, LATEST_NODE_VERSION } = require('./contstants');
 
 module.exports = {
   buildStrapiImages,
@@ -39,12 +35,7 @@ async function buildStrapiImages({ version, shouldPush = false } = {}) {
   return createdTags.map(tag => `${STRAPI_IMAGE_NAME}:${tag}`);
 }
 
-async function buildStrapiImage({
-  nodeVersion,
-  version,
-  alpine = false,
-  shouldPush = false,
-}) {
+async function buildStrapiImage({ nodeVersion, version, alpine = false, shouldPush = false }) {
   let tmpImg = `${STRAPI_IMAGE_NAME}:tmp`;
 
   await execDocker([
@@ -73,11 +64,7 @@ async function buildStrapiImage({
   return tags;
 }
 
-function buildStrapiTags({
-  version: strapiVersion,
-  nodeVersion,
-  alpine = false,
-}) {
+function buildStrapiTags({ version: strapiVersion, nodeVersion, alpine = false }) {
   let tags = [];
   let versions = [strapiVersion];
 

@@ -16,6 +16,7 @@
     "yargs": "^14.2.0"
   },
   "devDependencies": {
-    "eslint": "^6.5.1"
+    "eslint": "^6.5.1",
+    "prettier": "1.19.1"
   }
 }
