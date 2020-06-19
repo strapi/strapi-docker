@@ -22,7 +22,7 @@ if [ "$1" = "strapi" ]; then
       --dbssl=$DATABASE_SSL \
       $EXTRA_ARGS
 
-  elif [ ! -d "node_modules" ] || [ ! "$(ls -A node_modules)" ]; then
+  elif [ ! -d "node_modules" ] || [ ! "$(ls -qAL node_modules 2>/dev/null)" ]; then
 
     echo "Node modules not installed. Installing..."
 
