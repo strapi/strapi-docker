@@ -3,7 +3,7 @@
 const semver = require('semver');
 
 const { execDocker, getLatestStrapiRelease } = require('./utils');
-const { STRAPI_IMAGE_NAME, NODE_VERSIONS, LATEST_NODE_VERSION } = require('./contstants');
+const { STRAPI_IMAGE_NAME, NODE_VERSIONS, LATEST_NODE_VERSION } = require('./constants');
 
 module.exports = {
   buildStrapiImages,

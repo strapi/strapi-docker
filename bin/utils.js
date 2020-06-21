@@ -3,7 +3,7 @@
 const execa = require('execa');
 const got = require('got');
 
-const { REPO } = require('./contstants');
+const { REPO } = require('./constants');
 
 async function getLatestStrapiRelease() {
   const { body } = await got(`https://api.github.com/repos/${REPO}/releases/latest`, {
