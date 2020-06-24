@@ -1,7 +1,7 @@
 'use strict';
 
 const { execDocker } = require('./utils');
-const { NODE_VERSIONS, BASE_IMAGE_NAME, LATEST_NODE_VERSION } = require('./contstants');
+const { NODE_VERSIONS, BASE_IMAGE_NAME, LATEST_NODE_VERSION } = require('./constants');
 
 module.exports = {
   buildBaseImages,
