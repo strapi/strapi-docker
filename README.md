@@ -24,7 +24,7 @@ This image allows you to create a new strapi project or run a project from your 
 
 ### Creating a new project
 
-When running this image, strapi will check if there is a project in the `/src/app` folder of the container. If there is nothing then it will run the [`strapi new`](https://strapi.io/documentation/v3.x/cli/CLI.html#strapi-new) command in the container /srv/app folder. You can create a new project by running this command.
+When running this image, strapi will check if there is a project in the `/srv/app` folder of the container. If there is nothing then it will run the [`strapi new`](https://strapi.io/documentation/v3.x/cli/CLI.html#strapi-new) command in the container /srv/app folder. You can create a new project by running this command.
 
 ```bash
 docker run -it -p 1337:1337 -v `pwd`/project-name:/srv/app strapi/strapi
