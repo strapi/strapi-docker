@@ -108,5 +108,6 @@ When deploying a strapi application to production you can use docker to package 
 You can build the images with the build command. To see the options run:
 
 ```
+yarn install
 ./bin/build.js --help
 ```
