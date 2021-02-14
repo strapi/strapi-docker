@@ -99,6 +99,13 @@ docker run -it \
   strapi/strapi
 ```
 
+
+### Upgrading Strapi in Docker container
+
+- **Important!** Upgrading `strapi/strapi` Docker image tag **does not** upgrade Strapi version.
+  - Strapi NodeJS application builds itself during first startup only, if detects empty folder and is normally stored in mounted volume. See [docker-entrypoint.sh](https://github.com/strapi/strapi-docker/blob/master/strapi/docker-entrypoint.sh).
+- To upgrade, first follow the guides ([general](https://strapi.io/documentation/developer-docs/latest/guides/update-version.html) and [version-specific](https://strapi.io/documentation/developer-docs/latest/migration-guide/)) to rebuild actual Strapi NodeJS application. Secondly, update docker tag to match the version to avoid confusion.
+
 ## How to use `strapi/base`
 
 When deploying a strapi application to production you can use docker to package your whole app in an image. You can create a Dockerfile in your strapi project like the one in [`./examples/custom`](./examples/custom)
