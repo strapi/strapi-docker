@@ -24,7 +24,7 @@ This image allows you to create a new strapi project or run a project from your 
 
 ### Creating a new project
 
-When running this image, strapi will check if there is a project in the `/srv/app` folder of the container. If there is nothing then it will run the [`strapi new`](https://strapi.io/documentation/v3.x/cli/CLI.html#strapi-new) command in the container /srv/app folder. You can create a new project by running this command.
+When running this image, strapi will check if there is a project in the `/srv/app` folder of the container. If there is nothing then it will run the [`strapi new`](https://strapi.io/documentation/developer-docs/latest/developer-resources/cli/CLI.html#strapi-new) command in the container /srv/app folder. You can create a new project by running this command.
 
 ```bash
 docker run -it -p 1337:1337 -v `pwd`/project-name:/srv/app strapi/strapi
@@ -37,7 +37,7 @@ Once the project is created it will be available in this folder on your computer
 
 **Environment variables**
 
-When creating a new project with this image you can pass database configurations to the [`strapi new`](https://strapi.io/documentation/v3.x/cli/CLI.html#strapi-new) command.
+When creating a new project with this image you can pass database configurations to the [`strapi new`](https://strapi.io/documentation/developer-docs/latest/developer-resources/cli/CLI.html#strapi-new) command.
 
 - `DATABASE_CLIENT` a database provider supported by Strapi: (sqlite, postgres, mysql ,mongo).
 - `DATABASE_HOST` database host.
@@ -46,7 +46,7 @@ When creating a new project with this image you can pass database configurations
 - `DATABASE_USERNAME` database username.
 - `DATABASE_PASSWORD` database password.
 - `DATABASE_SSL` boolean for SSL.
-- `EXTRA_ARGS` pass extra args to the [`strapi new`](https://strapi.io/documentation/v3.x/cli/CLI.html#strapi-new).
+- `EXTRA_ARGS` pass extra args to the [`strapi new`](https://strapi.io/documentation/developer-docs/latest/developer-resources/cli/CLI.html#strapi-new).
 
 **Example**
 
