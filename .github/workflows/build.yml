@@ -1,0 +1,76 @@
+---
+name: docker build
+#
+# confiuration:
+#   run every night to build new versions automatically or if the build configuration has been
+#   changed in the main branch
+#
+on:
+  push:
+    branches:
+    - master
+  schedule:
+  - cron:  '0 0 * * *'
+
+jobs:
+  #
+  # phase 1:
+  #   grab the current tags from strapi repository and the existing docker tags
+  #   and push them into the ci context
+  #
+  grab_current_strapi_versions:
+      runs-on: ubuntu-latest
+
+      steps:
+          - id: set-strapi-versions
+            run: echo "::set-output name=strapiversions::$(curl -L -s https://api.github.com/repos/strapi/strapi/tags  | jq -r ' [.[].name | .[1:]] | @json')"
+
+      outputs:
+          strapiversions: ${{ steps.set-strapi-versions.outputs.strapiversions }}
+
+  grab_current_docker_versions:
+      runs-on: ubuntu-latest
+
+      steps:
+          - id: set-docker-versions
+            run: echo "::set-output name=dockerversions::$(curl -L -s https://registry.hub.docker.com/v2/repositories/loumaris/strapi/tags | jq ' [.results[].name] | join(",")')"
+      outputs:
+          dockerversions: ${{ steps.set-docker-versions.outputs.dockerversions }}
+
+  #
+  # phase 2:
+  #   create a matrix based on the strapi versions, node and the image type
+  #   skip the build if the generated docker tag already exists
+  #
+  build:
+    needs: [grab_current_strapi_versions, grab_current_docker_versions]
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        strapi: ["base", "strapi"]
+        node: ["12", "12-alpine", "14", "14-alpine"]
+        strapiversion: "${{ fromJson(needs.grab_current_strapi_versions.outputs.strapiversions) }}"
+        dockertags: ["${{ needs.grab_current_docker_versions.outputs.dockerversions }}"]
+    env:
+      DOCKER_TAG:  loumaris/strapi:${{ matrix.strapiversion }}-${{ matrix.strapi }}-node${{ matrix.node }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        if: "!contains(matrix.dockertags, env.DOCKER_TAG) && !contains(env.DOCKER_TAG, 'beta')"
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        if: "!contains(matrix.dockertags, env.DOCKER_TAG) && !contains(env.DOCKER_TAG, 'beta')"
+        with:
+          context: ${{ matrix.strapi }}
+          push: true
+          no-cache: true
+          build-args: |
+            NODE_VERSION=${{ matrix.node }}
+            STRAPI_VERSION=${{ matrix.strapiversion }}
+          tags: ${{ env.DOCKER_TAG }}
