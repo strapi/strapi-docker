@@ -1,5 +1,12 @@
 # [Strapi](https://github.com/strapi/strapi) containerized
 
+> ⚠️  This image is only for Strapi v3. For now, we will not update it for v4.
+> 
+> However, to build an image compatible with Strapi v4, we recommend you follow this guide by Simen Daehlin, Community Star at Strapi, https://blog.dehlin.dev/docker-with-strapi-v4.
+>
+> If you would like an official v4 image, please share it on the roadmap 💜 https://feedback.strapi.io/developer-experience.
+</br>
+
 ![Strapi](https://cldup.com/7umchwdUBh.png)
 
 API creation made simple, secure and fast.
