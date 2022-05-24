@@ -4,7 +4,9 @@ const ORG = process.env.ORG || 'strapi';
 const REPO = 'strapi/strapi';
 const BASE_IMAGE_NAME = `${ORG}/base`;
 const STRAPI_IMAGE_NAME = `${ORG}/strapi`;
-const NODE_VERSIONS = [10, 12, 14];
+const STRAPI_PACKAGE_NAME = '@strapi/strapi';
+const STRAPI_PACKAGE_NAME_OLD = 'strapi';
+const NODE_VERSIONS = [12, 14];
 const LATEST_NODE_VERSION = 14;
 
 module.exports = {
@@ -12,6 +14,8 @@ module.exports = {
   REPO,
   BASE_IMAGE_NAME,
   STRAPI_IMAGE_NAME,
+  STRAPI_PACKAGE_NAME,
+  STRAPI_PACKAGE_NAME_OLD,
   NODE_VERSIONS,
   LATEST_NODE_VERSION,
 };

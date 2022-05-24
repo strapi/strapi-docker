@@ -3,7 +3,7 @@
 const execa = require('execa');
 const got = require('got');
 
-const { REPO } = require('./constants');
+const { REPO, STRAPI_PACKAGE_NAME, STRAPI_PACKAGE_NAME_OLD } = require('./constants');
 
 async function getLatestStrapiRelease() {
   const { body } = await got(`https://api.github.com/repos/${REPO}/releases/latest`, {
@@ -20,7 +20,16 @@ function execDocker(args) {
   });
 }
 
+function isVersion4(version) {
+  return version === 4;
+}
+
+function getStrapiPackageName(version) {
+  return isVersion4(version) ? STRAPI_PACKAGE_NAME : STRAPI_PACKAGE_NAME_OLD;
+}
+
 module.exports = {
   execDocker,
   getLatestStrapiRelease,
+  getStrapiPackageName,
 };
