@@ -2,7 +2,7 @@
 
 const semver = require('semver');
 
-const { execDocker, getLatestStrapiRelease } = require('./utils');
+const { execDocker, getLatestStrapiRelease, getStrapiPackageName } = require('./utils');
 const { STRAPI_IMAGE_NAME, NODE_VERSIONS, LATEST_NODE_VERSION } = require('./constants');
 
 module.exports = {
@@ -44,6 +44,8 @@ async function buildStrapiImage({ nodeVersion, version, alpine = false, shouldPu
     `BASE_VERSION=${nodeVersion}${alpine ? '-alpine' : ''}`,
     '--build-arg',
     `STRAPI_VERSION=${version}`,
+    '--build-arg',
+    `STRAPI_PACKAGE_NAME=${getStrapiPackageName(parseInt(version))}`,
     '-t',
     tmpImg,
     './strapi',
