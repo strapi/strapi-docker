@@ -2,9 +2,7 @@
 
 > ⚠️  This image is only for Strapi v3. For now, we will not update it for v4.
 > 
-> However, to build an image compatible with Strapi v4, we recommend you follow this guide by Simen Daehlin, Community Star at Strapi, https://blog.dehlin.dev/docker-with-strapi-v4.
->
-> If you would like an official v4 image, please share it on the roadmap 💜 https://feedback.strapi.io/developer-experience.
+> However, to build an image compatible with Strapi v4, we recommend you check out this tool created by the Strapi Community: https://github.com/strapi-community/strapi-tool-dockerize
 </br>
 
 ![Strapi](https://cldup.com/7umchwdUBh.png)
