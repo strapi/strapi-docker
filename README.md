@@ -14,7 +14,7 @@ The most advanced open-source Content Management Framework to build powerful API
 
 ---
 
-[![Travis](https://img.shields.io/travis/strapi/strapi-docker.svg?style=for-the-badge)](https://travis-ci.org/strapi/strapi-docker)
+[![Travis](https://img.shields.io/travis/com/strapi/strapi-docker.svg?style=for-the-badge)](https://app.travis-ci.com/github/strapi/strapi-docker)
 [![Docker Pulls](https://img.shields.io/docker/pulls/strapi/strapi.svg?style=for-the-badge)](https://hub.docker.com/r/strapi/strapi)
 
 ## Images
