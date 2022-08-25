@@ -1,6 +1,13 @@
 #!/bin/sh
 set -ea
 
+# Allow sensitive settings to be defined in a file
+# in order to support Docker secrets
+if [ -n "${DATABASE_PASSWORD_FILE}" ]; then
+  DATABASE_PASSWORD=$(cat "$DATABASE_PASSWORD_FILE")
+  export DATABASE_PASSWORD
+fi
+
 if [ "$1" = "strapi" ]; then
 
   if [ ! -f "package.json" ]; then
