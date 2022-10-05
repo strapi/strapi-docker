@@ -18,7 +18,7 @@ services:
       - ./app:/srv/app
     depends_on:
       - db
-    command: 'strapi start'
+    command: bash -c "strapi build && strapi start"
 
   db:
     container_name: postgres
